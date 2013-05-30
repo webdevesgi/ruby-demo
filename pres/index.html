@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Getting started with Ruby</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/custom.css" id="theme">
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <section>
+          <h1>Ruby</h1>
+          <img src="img/ruby.png" style="border: none; box-shadow: none" />
+          <h3>A Programmer's Best Friend</h3>
+          <p>
+            <small><a href="https://github.com/webdevesgi">@webdevesgi</a> 2013 - <a href="http://twitter.com/rhannequin">@rhannequin</a></small>
+          </p>
+        </section>
+
+        <section>
+          <section>
+            <h1>Ruby c'est quoi ?</h1>
+          </section>
+          <section>
+            <h2>Merci Google</h2>
+            <img src="img/google-ruby.png" />
+          </section>
+          <section>
+            <p>Langage interprété</p><br />
+            <p>Orienté objet</p><br />
+            <p>Typage fort et dynamique</p><br />
+            <p>Multi-paradigmes</p>
+          </section>
+          <section>
+            <h2>Histoire</h2>
+            <img src="img/matz.jpg" height="300" />
+            <p><strong>Créateur</strong> Yukihiro « Matz » Matsumoto</p>
+            <p><strong>24/02/93</strong> création de Ruby</p>
+            <p><strong>25/12/96</strong> Ruby 1.0</p>
+            <p><strong>24/02/13</strong> Ruby 2.0</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Philosophie</h1>
+          </section>
+          <section>
+            <h2>Écrire des algos en anglais</h2>
+            <p>Designé pour la productivité et le fun</p><br />
+            <p>Orienté développeur plutôt que machine</p><br />
+            <p>C'est le développeur qui écrit le code, c'est lui le maître</p>
+            <img src="img/me-gusta.jpg" style="border:none;box-shadow:none" />
+          </section>
+          <section>
+            <h2>Implémentation</h2>
+            <p>Toute donnée est un objet, y compris les types</p><br />
+            <p>Toute fonction est une méthode</p><br />
+            <p>Toute variable est une référence à un objet</p>
+          </section>
+          <section>
+            <h2>Multi-paradigmes</h2>
+            <p>Orienté objet</p><br />
+            <p>Procédural</p><br />
+            <p>Fonctionnel</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Syntaxe</h1>
+          </section>
+          <section>
+            <h2>Conditions</h2>
+            <pre>
+              <code>
+                if ruby > php
+                  print "You don't say"
+                else
+                  print "You kiddin' me??"
+                end
+              </code>
+              <code>
+                if ok? then print "ok"
+              </code>
+              <code>
+                unless ok? then print "not ok"
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Boucles</h2>
+            <pre>
+              <code>
+                for cat in cats
+                  print "Owww #{cat} &lt;3"
+                end
+              </code>
+              <code>
+                while is_night?
+                  sleep
+                end
+              </code>
+              <code>
+                work until tired
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Hash et symboles</h2>
+            <pre>
+              <code>
+                { 1 => "one" }
+                { "one" => 1 }
+                { :one => "one" }
+
+                > "symbol".to_sym
+                #=> :symbol
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Blocks</h2>
+            <pre>
+              <code>
+                ["Bulbizarre", "Salamèche", "Carapuce"].each do |pokemon|
+                  puts "Do you want to fight Regis with #{pokemon}?"
+                end
+              </code>
+              <code>
+                array = [1, 2, 3, 4]
+
+                array.iterate! do |n|
+                  n ** 2
+                end
+
+                puts array.inspect
+
+                # => [1, 4, 9, 16]
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Classes, modules et mixins</h2>
+            <pre>
+              <code>
+                class Human
+                  attr_accessor :name
+                  def initialize(name)
+                    @name = name
+                  end
+                end
+
+                class Dev < Human
+                  attr_accessor :skills
+                  def initialize(name, skills)
+                    super(name)
+                    @skills = skills
+                  end
+                end
+              </code>
+              <code>
+                > r = Dev.new "rhannequin", ["backend", "noob"]
+                > print "My name is #{r.name} "
+                > print "and my skills are #{r.skills.join(', ')}."
+                #=> My name is rhannequin and my skills are backend, noob.
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Les petits plus</h2>
+            <pre>
+              <code>
+                > is_allowed?
+                #=> true
+              </code>
+              <code>
+                > (1..9).to_a
+                #=> [1, 2, 3, 4, 5, 6, 7, 8, 9]
+                > [1...10].to_a
+                #=> [1, 2, 3, 4, 5, 6, 7, 8, 9]
+              </code>
+              <code>
+                > 5.times {print "lol "}
+                #=> lol lol lol lol lol
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Un petit dernier pour la route</h2>
+            <pre>
+              <code>
+                def some_method(a, b, c=5, *p, q)
+                end
+
+                some_method(25, 35, 45)
+                  a=25   b=35  c=5
+                  p=[]   q=45
+                some_method(25, 35, 45, 55)
+                  a=25   b=35  c=45
+                  p=[]   q=55
+                some_method(25, 35, 45, 55, 65)
+                  a=25   b=35  c=45
+                  p=[55] q=65
+                some_method(25, 35, 45, 55, 65, 75)
+                  a=25,  b=35  c=45
+                  p=[55, 65]    q=75
+              </code>
+            </pre>
+          </section>
+        </section>
+
+        <section>
+          <h2>Vous en voulez plus ?</h2>
+          <img src="img/acb.jpg" />
+        </section>
+
+        <section>
+          <img src="img/sinatra-logo.png" style="border:none;box-shadow:none" />
+          <h1>Démo avec Sinatra</h1>
+        </section>
+
+        <section style="background-image: url('img/legend.gif')">
+          <h2>Sinatra</h2>
+          <p>Créé en 2007</p><br />
+          <p>Léger et flexible</p><br />
+          <p>Basé sur Rack</p><br />
+          <p>Non-orienté MVC</p><br />
+          <p>Système de routing très puissant</p><br />
+          <p>Fait pour créer des applis Web très rapidement</p><br />
+          <p>Ruby On Rails est beaucoup plus riche et complexe</p>
+        </section>
+
+        <section>
+          <h1>THE END</h1>
+          <h3><a href="https://github.com/webdevesgi">@webdevesgi</a> 2013</h3>
+          <p>By @rhannequin - <a href="https://github.com/rhannequin">Github</a> <a href="http://twitter.com/rhannequin">Twitter</a></p>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+        ]
+      });
+
+    </script>
+  </body>
+</html>
